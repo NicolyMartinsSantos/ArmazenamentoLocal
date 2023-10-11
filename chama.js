@@ -1,9 +1,9 @@
-// Função para obter o tema salvo localmente
+
 function getSavedTheme() {
     return localStorage.getItem('theme');
 }
 
-// Função para aplicar o tema
+
 function applyTheme(theme) {
     const body = document.body;
     if (theme === 'dark') {
@@ -15,7 +15,7 @@ function applyTheme(theme) {
     }
 }
 
-// Função para alternar entre os temas
+
 function toggleTheme() {
     const currentTheme = getSavedTheme();
     if (currentTheme === 'dark') {
@@ -26,7 +26,7 @@ function toggleTheme() {
     applyTheme(getSavedTheme());
 }
 
-// Função para atualizar o contador de visitas
+
 function updateVisitCount() {
     let visitCount = localStorage.getItem('visitCount') || 0;
     visitCount = parseInt(visitCount) + 1;
@@ -34,7 +34,7 @@ function updateVisitCount() {
     document.getElementById('visitCount').textContent = visitCount;
 }
 
-// Inicialização
+
 document.getElementById('changeTheme').addEventListener('click', toggleTheme);
 applyTheme(getSavedTheme());
 updateVisitCount();
